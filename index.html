@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>JP Teknologi Integrasi — Smart Building Solutions</title>
-<meta name="description" content="JP Teknologi Integrasi menghadirkan solusi sistem monitoring, otomasi, engineering, dan software pengelolaan gedung berbasis teknologi digital yang presisi, handal, dan terintegrasi.">
+<meta name="description" content="JP Teknologi Integrasi menghadirkan solusi sistem monitoring, otomasi, engineering, CCTV, videotron, dan software pengelolaan gedung berbasis teknologi digital yang presisi, handal, dan terintegrasi.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
@@ -46,7 +46,7 @@ header.scrolled{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);box-
 .logo b{display:block;font-family:"Plus Jakarta Sans";font-size:16px;color:#fff;line-height:1.1}
 .logo small{display:block;font-size:10px;letter-spacing:.2em;color:rgba(255,255,255,.7)}
 header.scrolled .logo b{color:var(--navy)} header.scrolled .logo small{color:var(--muted)}
-.menu{display:flex;gap:28px;align-items:center}
+.menu{display:flex;gap:24px;align-items:center}
 .menu a{font-size:14px;font-weight:500;color:rgba(255,255,255,.85);transition:.2s}
 .menu a:hover{color:var(--teal)}
 header.scrolled .menu a{color:var(--muted)} header.scrolled .menu a:hover{color:var(--teal)}
@@ -108,12 +108,66 @@ header.scrolled .burger{color:var(--navy)}
 #solusi .wrap{position:relative}
 #solusi .head h2{color:#fff} #solusi .head p{color:rgba(255,255,255,.65)}
 #solusi .eyebrow{background:var(--teal-20);color:#7fe0e0}
-.grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.grid-5{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .sol{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:22px;transition:.25s}
 .sol:hover{background:rgba(255,255,255,.1);border-color:rgba(31,173,173,.5)}
 .sol .ico{background:var(--teal-20);margin-bottom:14px;width:44px;height:44px}
 .sol h4{color:#fff;font-size:15px;margin-bottom:6px}
 .sol p{color:rgba(255,255,255,.6);font-size:13px}
+
+/* VIDEOTRON */
+#videotron{background:var(--white)}
+.vt-intro{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;margin-bottom:56px}
+.vt-screen{position:relative;aspect-ratio:16/9;border-radius:18px;padding:10px;background:#0a1222;box-shadow:var(--shadow)}
+.vt-screen .panel{position:relative;width:100%;height:100%;border-radius:10px;overflow:hidden;
+  background:linear-gradient(120deg,#0b1d3a 0%,#1fadad 45%,#7fe0e0 55%,#132a52 100%);background-size:300% 300%;animation:vtflow 9s ease-in-out infinite}
+.vt-screen .panel::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,rgba(0,0,0,0) 55%,rgba(5,10,20,.55) 56%);background-size:6px 6px}
+.vt-screen .panel::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(5,10,20,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(5,10,20,.5) 1px,transparent 1px);background-size:25% 33.34%}
+.vt-screen .txt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:2;color:#fff;text-align:center;text-shadow:0 2px 12px rgba(0,0,0,.4)}
+.vt-screen .txt b{font-family:"Plus Jakarta Sans";font-size:clamp(22px,3.4vw,38px);letter-spacing:.04em}
+.vt-screen .txt span{font-size:13px;letter-spacing:.3em;opacity:.85}
+.vt-stand{width:30%;height:10px;margin:0 auto;background:#c9d1dc;border-radius:0 0 8px 8px}
+@keyframes vtflow{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.brand-pill{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:#fff;padding:8px 16px;border-radius:10px;font-family:"Plus Jakarta Sans";font-weight:800;letter-spacing:.12em;margin-bottom:18px}
+.brand-pill small{font-family:Inter;font-weight:500;letter-spacing:0;color:#7fe0e0;font-size:12px}
+.vt-intro h3{font-size:26px;margin-bottom:14px}
+.vt-intro p{color:var(--muted);margin-bottom:14px}
+.vt-feat{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin-top:18px;list-style:none}
+.vt-feat li{display:flex;gap:8px;font-size:14px;color:var(--ink)}
+.vt-feat li::before{content:"✓";color:var(--teal);font-weight:700}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.prod{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;transition:.25s;display:flex;flex-direction:column}
+.prod:hover{box-shadow:var(--shadow);transform:translateY(-4px);border-color:var(--teal-20)}
+.prod .thumb{height:150px;position:relative;background:linear-gradient(135deg,var(--navy),var(--navy-2));display:grid;place-items:center;overflow:hidden}
+.prod .thumb::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle,var(--c,#1fadad) 1.2px,transparent 1.6px);background-size:var(--p,8px) var(--p,8px);opacity:.55}
+.prod .thumb .nm{position:relative;font-family:"Plus Jakarta Sans";font-weight:800;color:#fff;font-size:22px;background:rgba(11,29,58,.75);padding:6px 14px;border-radius:8px}
+.prod .tag{position:absolute;top:12px;left:12px;z-index:2;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:var(--teal);color:#fff;padding:4px 10px;border-radius:999px}
+.prod .body{padding:22px;flex:1;display:flex;flex-direction:column}
+.prod h4{font-size:18px;margin-bottom:4px}
+.prod .series{font-size:13px;color:var(--teal);font-weight:600;margin-bottom:10px}
+.prod p{font-size:14px;color:var(--muted);margin-bottom:14px;flex:1}
+.prod dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13px;border-top:1px solid var(--line);padding-top:12px}
+.prod dt{color:var(--muted)} .prod dd{color:var(--ink);font-weight:500}
+.vt-note{text-align:center;margin-top:32px;font-size:14px;color:var(--muted)}
+.vt-note a{color:var(--teal);font-weight:600}
+
+/* PROYEK */
+#proyek{background:var(--navy);position:relative;overflow:hidden}
+#proyek .head h2{color:#fff} #proyek .head p{color:rgba(255,255,255,.65)}
+#proyek .eyebrow{background:var(--teal-20);color:#7fe0e0}
+.projects{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.proj{position:relative;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);transition:.25s}
+.proj:hover{border-color:rgba(31,173,173,.5);transform:translateY(-3px)}
+.proj .top{height:170px;position:relative;background:linear-gradient(160deg,#132a52,#0b1d3a 60%);overflow:hidden}
+.proj .top::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:28px 28px}
+.proj .top svg{position:absolute;right:24px;bottom:18px;width:120px;height:120px;color:rgba(31,173,173,.55);stroke-width:1.2}
+.proj .loc{position:absolute;left:24px;bottom:20px;z-index:2}
+.proj .loc small{display:block;color:#7fe0e0;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:4px}
+.proj .loc h3{color:#fff;font-size:22px}
+.proj .body{padding:22px 24px 26px}
+.proj p{color:rgba(255,255,255,.7);font-size:15px;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:12px;font-weight:600;color:#7fe0e0;background:var(--teal-20);padding:5px 12px;border-radius:999px}
 
 /* ADVANTAGES */
 .adv{display:flex;gap:18px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:.25s}
@@ -179,6 +233,8 @@ footer .desc{font-size:14px;margin-top:16px}
 }
 @media (max-width:860px){
   section{padding:72px 0}
+  .vt-intro,.projects{grid-template-columns:1fr}
+  .products{grid-template-columns:1fr 1fr}
   .menu{position:fixed;top:72px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fff;padding:12px 20px 20px;box-shadow:var(--shadow);display:none}
   .menu.open{display:flex}
   .menu a{color:var(--ink)!important;padding:12px 0;border-bottom:1px solid var(--line)}
@@ -193,6 +249,7 @@ footer .desc{font-size:14px;margin-top:16px}
   .grid-3,.grid-5,.vm,.row,.foot{grid-template-columns:1fr}
   .grid-5{grid-template-columns:1fr 1fr}
   .steps{grid-template-columns:1fr}
+  .products,.vt-feat{grid-template-columns:1fr}
   .stats{gap:28px}
   form{padding:22px}
 }
@@ -209,6 +266,8 @@ footer .desc{font-size:14px;margin-top:16px}
       <a href="#tentang">Tentang Kami</a>
       <a href="#layanan">Layanan</a>
       <a href="#solusi">Solusi</a>
+      <a href="#videotron">Videotron</a>
+      <a href="#proyek">Proyek</a>
       <a href="#keunggulan">Keunggulan</a>
       <a href="#kontak" class="btn btn-primary">Kontak</a>
     </nav>
@@ -284,6 +343,8 @@ footer .desc{font-size:14px;margin-top:16px}
       <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></div><h3>Otomasi dan Sistem Kontrol</h3><p>Solusi otomasi yang mengoptimalkan operasional gedung secara otomatis — dari kontrol pencahayaan, HVAC, hingga manajemen energi untuk efisiensi maksimal.</p><a href="#kontak" class="more">Pelajari lebih lanjut →</a></div>
       <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9l-3.8 3.8z"/></svg></div><h3>Solusi Engineering</h3><p>Layanan engineering komprehensif meliputi desain, instalasi, dan integrasi sistem elektronika dan embedded system untuk kebutuhan industri dan bangunan modern.</p><a href="#kontak" class="more">Pelajari lebih lanjut →</a></div>
       <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></div><h3>Software Pengelolaan Gedung</h3><p>Pengembangan aplikasi custom berbasis web dan mobile untuk manajemen apartemen, billing, complaint handling, maintenance report, dan seluruh operasional gedung.</p><a href="#kontak" class="more">Pelajari lebih lanjut →</a></div>
+      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M16.75 12h3.63a1 1 0 0 1 .7 1.7l-1.6 1.6a1 1 0 0 1-.7.3H16"/><path d="m3.5 5.2 11.6 3.1a2 2 0 0 1 1.4 2.4l-.9 3.4a2 2 0 0 1-2.4 1.4L1.6 12.4a1 1 0 0 1-.7-1.2l1.4-5.3a1 1 0 0 1 1.2-.7z"/><path d="M6 14.5V18a2 2 0 0 1-2 2H2"/></svg></div><h3>CCTV &amp; Sistem Keamanan</h3><p>Perancangan, instalasi, dan integrasi sistem CCTV berbasis IP — kamera, NVR/VMS, ruang kontrol, hingga akses pemantauan jarak jauh untuk gedung, kawasan, dan fasilitas publik.</p><a href="#kontak" class="more">Pelajari lebih lanjut →</a></div>
+      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="13" rx="1"/><path d="M6 7h.01M10 7h.01M14 7h.01M18 7h.01M6 11h.01M10 11h.01M14 11h.01M18 11h.01M8 21h8M12 16v5"/></svg></div><h3>Videotron &amp; LED Display</h3><p>Pengadaan dan instalasi videotron indoor maupun outdoor dengan brand LAMPRO — untuk papan informasi, iklan digital (DOOH), ruang rapat, command center, dan area publik.</p><a href="#videotron" class="more">Lihat produk →</a></div>
     </div>
   </div>
 </section>
@@ -308,6 +369,66 @@ footer .desc{font-size:14px;margin-top:16px}
       <div class="sol reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h4>Complaint Handling</h4><p>Sistem penanganan keluhan penghuni yang terstruktur</p></div>
       <div class="sol reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></svg></div><h4>Maintenance Report</h4><p>Pelaporan dan penjadwalan perawatan gedung otomatis</p></div>
       <div class="sol reveal"><div class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h4>Software Custom Web/Mobile</h4><p>Pengembangan aplikasi sesuai kebutuhan spesifik klien</p></div>
+      <div class="sol reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M16.75 12h3.63a1 1 0 0 1 .7 1.7l-1.6 1.6a1 1 0 0 1-.7.3H16"/><path d="m3.5 5.2 11.6 3.1a2 2 0 0 1 1.4 2.4l-.9 3.4a2 2 0 0 1-2.4 1.4L1.6 12.4a1 1 0 0 1-.7-1.2l1.4-5.3a1 1 0 0 1 1.2-.7z"/><path d="M6 14.5V18a2 2 0 0 1-2 2H2"/></svg></div><h4>CCTV &amp; Video Surveillance</h4><p>Pemantauan keamanan 24/7 dengan kamera IP dan rekaman terpusat</p></div>
+      <div class="sol reveal"><div class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="13" rx="1"/><path d="M6 7h.01M10 7h.01M14 7h.01M18 7h.01M6 11h.01M10 11h.01M14 11h.01M18 11h.01M8 21h8M12 16v5"/></svg></div><h4>Videotron / LED Display</h4><p>Layar LED indoor &amp; outdoor untuk informasi dan iklan digital</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEOTRON -->
+<section id="videotron">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Produk Videotron</span>
+      <h2>Videotron &amp; LED Display Profesional</h2>
+      <p>Solusi layar LED indoor dan outdoor untuk informasi publik, iklan digital, ruang kontrol, hingga event — didukung brand LED display internasional LAMPRO.</p>
+    </div>
+    <div class="vt-intro">
+      <div class="reveal">
+        <div class="vt-screen"><div class="panel"></div><div class="txt"><b>JP TEKNOLOGI</b><span>VIDEOTRON · LED DISPLAY</span></div></div>
+        <div class="vt-stand"></div>
+      </div>
+      <div class="reveal">
+        <div class="brand-pill">LAMPRO <small>Brand yang kami gunakan</small></div>
+        <h3>Kualitas Layar Kelas Dunia, Dipasang oleh Tim Lokal</h3>
+        <p>Kami menggunakan videotron LAMPRO — brand LED display dengan pengalaman lebih dari 20 tahun dan instalasi di enam benua — untuk kebutuhan komersial, publik, broadcast, dan event.</p>
+        <p>JP Teknologi Integrasi menangani seluruh pekerjaan: survei lokasi, desain ukuran &amp; pixel pitch, struktur rangka, kelistrikan, instalasi, sistem kontrol konten, hingga perawatan.</p>
+        <ul class="vt-feat">
+          <li>Indoor &amp; outdoor</li><li>Fine pitch hingga P8</li>
+          <li>Teknologi SMD, COB &amp; Mini LED</li><li>Maintenance depan/belakang</li>
+          <li>Kontrol konten jarak jauh</li><li>Integrasi dengan CCTV &amp; sistem gedung</li>
+        </ul>
+      </div>
+    </div>
+    <div class="products">
+      <div class="prod reveal"><div class="thumb" style="--p:5px;--c:#7fe0e0"><span class="tag">Indoor Fine Pitch</span><span class="nm">LMini</span></div><div class="body"><h4>Fine Pitch COB</h4><div class="series">Seri LMini · LMini P · LHP</div><p>Layar resolusi sangat tinggi dengan teknologi COB/Mini LED untuk ruang rapat, command center, dan ruang kontrol.</p><dl><dt>Penggunaan</dt><dd>Indoor</dd><dt>Pixel pitch</dt><dd>Fine / near pitch</dd><dt>Aplikasi</dt><dd>Command center, meeting room</dd></dl></div></div>
+      <div class="prod reveal"><div class="thumb" style="--p:7px;--c:#1fadad"><span class="tag">Indoor</span><span class="nm">LC</span></div><div class="body"><h4>Indoor Fixed</h4><div class="series">Seri LC · LC COB · WNX · BNX II</div><p>Videotron indoor serbaguna untuk lobby, mal, ruang tunggu, dan papan informasi, dengan opsi bentuk kreatif.</p><dl><dt>Penggunaan</dt><dd>Indoor</dd><dt>Pixel pitch</dt><dd>P1.2 – P3.9</dd><dt>Aplikasi</dt><dd>Lobby, mal, ruang tunggu</dd></dl></div></div>
+      <div class="prod reveal"><div class="thumb" style="--p:10px;--c:#1fadad"><span class="tag">Outdoor</span><span class="nm">WX</span></div><div class="body"><h4>Outdoor Fixed</h4><div class="series">Seri WX · LSK · LS Pro</div><p>Layar outdoor tahan cuaca dengan kecerahan tinggi untuk fasad gedung, area publik, dan papan informasi luar ruang.</p><dl><dt>Penggunaan</dt><dd>Outdoor</dd><dt>Pixel pitch</dt><dd>P2.6 – P8</dd><dt>Aplikasi</dt><dd>Fasad, area publik</dd></dl></div></div>
+      <div class="prod reveal"><div class="thumb" style="--p:12px;--c:#7fe0e0"><span class="tag">DOOH</span><span class="nm">LST</span></div><div class="body"><h4>Iklan Digital (DOOH)</h4><div class="series">Seri LST · LX II Pro</div><p>Solusi billboard digital untuk iklan luar ruang dengan proteksi tinggi dan pengoperasian jangka panjang.</p><dl><dt>Penggunaan</dt><dd>Outdoor</dd><dt>Pixel pitch</dt><dd>Fine – standard</dd><dt>Aplikasi</dt><dd>Billboard, jalan raya</dd></dl></div></div>
+      <div class="prod reveal"><div class="thumb" style="--p:8px;--c:#1fadad"><span class="tag">Rental</span><span class="nm">RN II</span></div><div class="body"><h4>Rental & Event</h4><div class="series">Seri RN II · LRS · LRM</div><p>Kabinet ringan dan cepat dirakit untuk panggung, konser, pameran, konferensi, dan acara temporer.</p><dl><dt>Penggunaan</dt><dd>Indoor / Outdoor</dd><dt>Pixel pitch</dt><dd>Beragam</dd><dt>Aplikasi</dt><dd>Panggung, event, pameran</dd></dl></div></div>
+      <div class="prod reveal"><div class="thumb" style="--p:6px;--c:#7fe0e0"><span class="tag">Kreatif</span><span class="nm">LCM</span></div><div class="body"><h4>Kreatif & Komersial</h4><div class="series">Seri LCM · LCM-TV · LW</div><p>Poster LED, layar fleksibel, dan instalasi kreatif untuk retail, showroom, dan display artistik.</p><dl><dt>Penggunaan</dt><dd>Indoor</dd><dt>Pixel pitch</dt><dd>Beragam</dd><dt>Aplikasi</dt><dd>Retail, showroom</dd></dl></div></div>
+    </div>
+    <p class="vt-note">Spesifikasi detail tiap seri tersedia di <a href="https://www.lampro.net" target="_blank" rel="noopener">lampro.net</a>. <a href="#kontak">Konsultasikan kebutuhan videotron Anda →</a></p>
+  </div>
+</section>
+
+<!-- PROYEK -->
+<section id="proyek">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Pengalaman Pekerjaan</span>
+      <h2>Dipercaya untuk Fasilitas Publik Strategis</h2>
+      <p>Beberapa proyek yang telah kami kerjakan di sektor bandara dan transportasi.</p>
+    </div>
+    <div class="projects">
+      <div class="proj reveal">
+        <div class="top"><svg viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg><div class="loc"><small>Banda Aceh · Aceh</small><h3>Bandara Sultan Iskandar Muda</h3></div></div>
+        <div class="body"><p>Pekerjaan videotron dan CCTV untuk mendukung penyampaian informasi serta keamanan di area terminal bandara.</p><div class="chips"><span>Videotron</span><span>CCTV</span><span>Bandara</span></div></div>
+      </div>
+      <div class="proj reveal">
+        <div class="top"><svg viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg><div class="loc"><small>Tapanuli Utara · Sumatera Utara</small><h3>Bandara Silangit</h3></div></div>
+        <div class="body"><p>Pekerjaan videotron dan CCTV untuk mendukung penyampaian informasi serta keamanan di area terminal bandara.</p><div class="chips"><span>Videotron</span><span>CCTV</span><span>Bandara</span></div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -347,6 +468,7 @@ footer .desc{font-size:14px;margin-top:16px}
       <div class="sector reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4.9 16.1a10 10 0 0 1 0-8.2M7.8 13.6a5 5 0 0 1 0-3.2M16.2 10.4a5 5 0 0 1 0 3.2M19.1 7.9a10 10 0 0 1 0 8.2"/><circle cx="12" cy="12" r="2"/><path d="m13.4 20-1.4-6-1.4 6"/></svg></div><h4>Telekomunikasi</h4><p>Infrastruktur monitoring untuk tower dan jaringan</p></div>
       <div class="sector reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 6v4M14 14h-4M14 18h-4M14 8h-4M18 12h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2h2"/><path d="M18 22V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v18"/></svg></div><h4>Rumah Sakit &amp; Fasilitas Publik</h4><p>Keamanan dan keandalan sistem critical facility</p></div>
       <div class="sector reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><h4>Sekolah &amp; Institusi</h4><p>Digitalisasi pengelolaan fasilitas pendidikan</p></div>
+      <div class="sector reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></div><h4>Bandara &amp; Transportasi</h4><p>Videotron informasi dan CCTV untuk terminal publik</p></div>
     </div>
   </div>
 </section>
@@ -415,11 +537,11 @@ footer .desc{font-size:14px;margin-top:16px}
       </div>
       <div>
         <h5>Navigasi</h5>
-        <ul><li><a href="#beranda">Beranda</a></li><li><a href="#tentang">Tentang Kami</a></li><li><a href="#layanan">Layanan</a></li><li><a href="#solusi">Solusi</a></li><li><a href="#keunggulan">Keunggulan</a></li><li><a href="#kontak">Kontak</a></li></ul>
+        <ul><li><a href="#beranda">Beranda</a></li><li><a href="#tentang">Tentang Kami</a></li><li><a href="#layanan">Layanan</a></li><li><a href="#solusi">Solusi</a></li><li><a href="#videotron">Videotron</a></li><li><a href="#proyek">Proyek</a></li><li><a href="#keunggulan">Keunggulan</a></li><li><a href="#kontak">Kontak</a></li></ul>
       </div>
       <div>
         <h5>Layanan</h5>
-        <ul><li><a href="#layanan">Smart Building System</a></li><li><a href="#layanan">Sistem Monitoring Digital</a></li><li><a href="#layanan">Otomasi &amp; Sistem Kontrol</a></li><li><a href="#layanan">Solusi Engineering</a></li><li><a href="#layanan">Software Pengelolaan Gedung</a></li></ul>
+        <ul><li><a href="#layanan">Smart Building System</a></li><li><a href="#layanan">Sistem Monitoring Digital</a></li><li><a href="#layanan">Otomasi &amp; Sistem Kontrol</a></li><li><a href="#layanan">Solusi Engineering</a></li><li><a href="#layanan">Software Pengelolaan Gedung</a></li><li><a href="#layanan">CCTV &amp; Sistem Keamanan</a></li><li><a href="#videotron">Videotron &amp; LED Display</a></li></ul>
       </div>
       <div>
         <h5>Kontak</h5>
