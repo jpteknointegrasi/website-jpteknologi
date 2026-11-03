@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JP Teknologi Integrasi — Smart Building Solutions</title>
+<meta name="description" content="JP Teknologi Integrasi menghadirkan solusi sistem monitoring, otomasi, engineering, dan software pengelolaan gedung berbasis teknologi digital yang presisi, handal, dan terintegrasi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1D3A; --navy-2:#132a52; --teal:#1FADAD; --teal-d:#178f8f;
+  --teal-10:rgba(31,173,173,.1); --teal-20:rgba(31,173,173,.2);
+  --ink:#0D1726; --muted:#5b6678; --line:#e5e8ee; --bg:#F9FAFB; --white:#fff;
+  --radius:16px; --shadow:0 10px 30px -12px rgba(11,29,58,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,.brand{font-family:"Plus Jakarta Sans",Inter,sans-serif;line-height:1.2;color:var(--navy)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+section{padding:96px 0}
+.bg-white{background:var(--white)} .bg-soft{background:var(--bg)}
+.eyebrow{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);background:var(--teal-10);padding:6px 14px;border-radius:999px;margin-bottom:16px}
+.head{text-align:center;max-width:720px;margin:0 auto 56px}
+.head h2{font-size:clamp(28px,4vw,40px);margin-bottom:14px}
+.head p{color:var(--muted);font-size:17px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;padding:14px 26px;border-radius:12px;transition:.2s;cursor:pointer;border:0}
+.btn-primary{background:var(--teal);color:#fff;box-shadow:0 8px 20px -8px rgba(31,173,173,.7)}
+.btn-primary:hover{background:var(--teal-d);transform:translateY(-1px)}
+.btn-ghost{border:1px solid rgba(255,255,255,.3);color:#fff;background:rgba(255,255,255,.05)}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.ico{width:48px;height:48px;border-radius:12px;background:var(--teal-10);color:var(--teal);display:grid;place-items:center;flex-shrink:0}
+.ico svg{width:24px;height:24px}
+svg{stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* NAV */
+header{position:fixed;inset:0 0 auto;z-index:50;transition:.3s}
+header.scrolled{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo .mark{width:40px;height:40px;border-radius:10px;background:var(--teal);color:#fff;display:grid;place-items:center;font-family:"Plus Jakarta Sans";font-weight:800;font-size:15px}
+.logo b{display:block;font-family:"Plus Jakarta Sans";font-size:16px;color:#fff;line-height:1.1}
+.logo small{display:block;font-size:10px;letter-spacing:.2em;color:rgba(255,255,255,.7)}
+header.scrolled .logo b{color:var(--navy)} header.scrolled .logo small{color:var(--muted)}
+.menu{display:flex;gap:28px;align-items:center}
+.menu a{font-size:14px;font-weight:500;color:rgba(255,255,255,.85);transition:.2s}
+.menu a:hover{color:var(--teal)}
+header.scrolled .menu a{color:var(--muted)} header.scrolled .menu a:hover{color:var(--teal)}
+.menu .btn{padding:10px 20px;color:#fff!important}
+.burger{display:none;background:none;border:0;color:#fff;cursor:pointer;padding:6px}
+header.scrolled .burger{color:var(--navy)}
+.burger svg{width:26px;height:26px}
+
+/* HERO */
+#beranda{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;overflow:hidden;background:var(--navy)}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero-bg::before{content:"";position:absolute;inset:0;background:linear-gradient(to right,rgba(11,29,58,.95),rgba(11,29,58,.8),rgba(11,29,58,.5));z-index:1}
+.hero-bg::after{content:"";position:absolute;inset:0;z-index:2;opacity:.25;background-image:linear-gradient(rgba(255,255,255,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.1) 1px,transparent 1px);background-size:60px 60px}
+.hero-fade{position:absolute;inset:auto 0 0;height:160px;background:linear-gradient(to top,rgba(11,29,58,.6),transparent);z-index:2}
+.hero{position:relative;z-index:3;max-width:720px}
+.hero .eyebrow{background:var(--teal-20);color:#7fe0e0}
+.hero h1{color:#fff;font-size:clamp(34px,5.5vw,56px);margin-bottom:22px}
+.hero h1 span{color:var(--teal)}
+.hero p{color:rgba(255,255,255,.75);font-size:18px;max-width:600px;margin-bottom:34px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:56px}
+.stats{display:flex;gap:48px;flex-wrap:wrap;padding-top:32px;border-top:1px solid rgba(255,255,255,.12)}
+.stats strong{display:block;font-family:"Plus Jakarta Sans";font-size:34px;color:#fff}
+.stats span{font-size:14px;color:rgba(255,255,255,.6)}
+
+/* ABOUT */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about-img{position:relative}
+.about-img img{border-radius:24px;box-shadow:var(--shadow);aspect-ratio:4/3.4;object-fit:cover;width:100%}
+.badge{position:absolute;right:-20px;bottom:-24px;background:var(--teal);color:#fff;padding:22px 26px;border-radius:18px;box-shadow:var(--shadow)}
+.badge strong{display:block;font-family:"Plus Jakarta Sans";font-size:36px;line-height:1}
+.badge span{font-size:13px;opacity:.9}
+.about h3{font-size:26px;margin-bottom:18px}
+.about p{color:var(--muted);margin-bottom:14px}
+.vm{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:26px 0}
+.vm div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px}
+.vm h4{font-size:16px;margin-bottom:6px;color:var(--teal)}
+.vm p{font-size:14px;margin:0}
+.values{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:64px}
+.value{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;text-align:center;transition:.25s}
+.value:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+.value .ico{margin:0 auto 14px}
+.value h4{font-size:17px;margin-bottom:6px}
+.value p{font-size:14px;color:var(--muted)}
+
+/* SERVICES */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;transition:.25s}
+.card:hover{border-color:var(--teal-20);box-shadow:var(--shadow);transform:translateY(-4px)}
+.card .ico{margin-bottom:20px}
+.card h3{font-size:19px;margin-bottom:10px}
+.card p{color:var(--muted);font-size:15px;margin-bottom:18px}
+.card .more{font-size:14px;font-weight:600;color:var(--teal)}
+
+/* SOLUTIONS */
+#solusi{position:relative;background:var(--navy);overflow:hidden}
+#solusi .bgimg{position:absolute;inset:0;opacity:.12}
+#solusi .bgimg img{width:100%;height:100%;object-fit:cover}
+#solusi .wrap{position:relative}
+#solusi .head h2{color:#fff} #solusi .head p{color:rgba(255,255,255,.65)}
+#solusi .eyebrow{background:var(--teal-20);color:#7fe0e0}
+.grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.sol{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:22px;transition:.25s}
+.sol:hover{background:rgba(255,255,255,.1);border-color:rgba(31,173,173,.5)}
+.sol .ico{background:var(--teal-20);margin-bottom:14px;width:44px;height:44px}
+.sol h4{color:#fff;font-size:15px;margin-bottom:6px}
+.sol p{color:rgba(255,255,255,.6);font-size:13px}
+
+/* ADVANTAGES */
+.adv{display:flex;gap:18px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:.25s}
+.adv:hover{box-shadow:var(--shadow)}
+.adv h4{font-size:17px;margin-bottom:6px}
+.adv p{font-size:14px;color:var(--muted)}
+
+/* SECTORS */
+.sectors{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
+.sector{flex:1 1 260px;max-width:280px;background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:26px;text-align:center;transition:.25s}
+.sector:hover{background:#fff;box-shadow:var(--shadow);transform:translateY(-3px)}
+.sector .ico{margin:0 auto 14px}
+.sector h4{font-size:16px;margin-bottom:6px}
+.sector p{font-size:14px;color:var(--muted)}
+
+/* PROCESS */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;position:relative}
+.steps::before{content:"";position:absolute;top:32px;left:10%;right:10%;height:2px;background:linear-gradient(90deg,var(--teal-20),var(--teal),var(--teal-20))}
+.step{text-align:center;position:relative}
+.step .num{width:64px;height:64px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;margin:0 auto 18px;font-family:"Plus Jakarta Sans";font-weight:800;font-size:20px;box-shadow:0 0 0 8px var(--bg)}
+.step h4{font-size:16px;margin-bottom:8px}
+.step p{font-size:14px;color:var(--muted)}
+
+/* CONTACT */
+.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:48px}
+.info{display:flex;flex-direction:column;gap:22px}
+.info-item{display:flex;gap:16px}
+.info-item h4{font-size:15px;margin-bottom:2px}
+.info-item p,.info-item a{font-size:14px;color:var(--muted)}
+.map{position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);margin-top:8px;height:260px}
+.map iframe{width:100%;height:100%;border:0}
+.map a{position:absolute;top:12px;left:12px;background:#fff;font-size:13px;padding:6px 12px;border-radius:8px;box-shadow:var(--shadow);color:var(--teal);font-weight:600}
+form{background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:32px}
+form h3{font-size:20px;margin-bottom:20px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:block;font-size:13px;font-weight:500;margin-bottom:6px;color:var(--navy)}
+input,textarea{width:100%;font:inherit;font-size:15px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;margin-bottom:16px;transition:.2s}
+input:focus,textarea:focus{outline:0;border-color:var(--teal);box-shadow:0 0 0 3px var(--teal-10)}
+textarea{min-height:120px;resize:vertical}
+form .btn{width:100%;justify-content:center}
+.note{font-size:13px;color:var(--teal);margin-top:12px;display:none;text-align:center}
+
+/* FOOTER */
+footer{background:var(--navy);color:rgba(255,255,255,.65);padding:64px 0 28px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1.2fr 1.2fr;gap:40px;margin-bottom:40px}
+footer h5{font-family:"Plus Jakarta Sans";color:#fff;font-size:15px;margin-bottom:16px}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:10px;font-size:14px}
+footer a:hover{color:var(--teal)}
+footer .desc{font-size:14px;margin-top:16px}
+.copy{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px}
+
+.wa{position:fixed;right:22px;bottom:22px;z-index:60;width:58px;height:58px;border-radius:50%;background:#22C55E;color:#fff;display:grid;place-items:center;box-shadow:0 10px 25px -6px rgba(34,197,94,.6);transition:.2s}
+.wa:hover{transform:scale(1.07)}
+.wa svg{width:30px;height:30px;fill:#fff;stroke:none}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:1024px){
+  .grid-5{grid-template-columns:repeat(3,1fr)}
+  .steps{grid-template-columns:repeat(3,1fr)} .steps::before{display:none}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  section{padding:72px 0}
+  .menu{position:fixed;top:72px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fff;padding:12px 20px 20px;box-shadow:var(--shadow);display:none}
+  .menu.open{display:flex}
+  .menu a{color:var(--ink)!important;padding:12px 0;border-bottom:1px solid var(--line)}
+  .menu .btn{margin-top:12px;justify-content:center;border:0}
+  .burger{display:block}
+  .about,.contact{grid-template-columns:1fr}
+  .badge{right:12px}
+  .values{grid-template-columns:1fr 1fr}
+  .grid-3{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  .grid-3,.grid-5,.vm,.row,.foot{grid-template-columns:1fr}
+  .grid-5{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr}
+  .stats{gap:28px}
+  form{padding:22px}
+}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap nav">
+    <a href="#beranda" class="logo"><span class="mark">JP</span><span><b>JP Teknologi</b><small>INTEGRASI</small></span></a>
+    <nav class="menu" id="menu">
+      <a href="#beranda">Beranda</a>
+      <a href="#tentang">Tentang Kami</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#solusi">Solusi</a>
+      <a href="#keunggulan">Keunggulan</a>
+      <a href="#kontak" class="btn btn-primary">Kontak</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="beranda">
+  <div class="hero-bg"><img src="https://media.base44.com/images/public/69d2253bc8e74360dbdd10ec/1d3c947d6_generated_e668bd84.png" alt="Smart Building Technology" onerror="this.src='assets/hero.png'"></div>
+  <div class="hero-fade"></div>
+  <div class="wrap">
+    <div class="hero">
+      <span class="eyebrow">Smart Building Solutions</span>
+      <h1>Integrasi Teknologi untuk <span>Smart Building</span> dan Operasional yang Lebih Efisien</h1>
+      <p>JP Teknologi Integrasi menghadirkan solusi sistem monitoring, otomasi, engineering, dan software pengelolaan gedung berbasis teknologi digital yang presisi, handal, dan terintegrasi.</p>
+      <div class="cta">
+        <a href="#kontak" class="btn btn-primary">Konsultasi Proyek <svg width="18" height="18" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#layanan" class="btn btn-ghost">Lihat Layanan</a>
+      </div>
+      <div class="stats">
+        <div><strong>10+</strong><span>Tahun Pengalaman</span></div>
+        <div><strong>100+</strong><span>Proyek Selesai</span></div>
+        <div><strong>50+</strong><span>Klien Puas</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TENTANG -->
+<section id="tentang" class="bg-soft">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Tentang Kami</span>
+      <h2>Mitra Terpercaya dalam Solusi Teknologi Gedung</h2>
+      <p>Dengan pengalaman lebih dari satu dekade, kami memahami setiap detail kebutuhan teknologi bangunan modern.</p>
+    </div>
+    <div class="about">
+      <div class="about-img reveal">
+        <img src="https://media.base44.com/images/public/69d2253bc8e74360dbdd10ec/e0c44c6be_generated_e6b75625.png" alt="Tim JP Teknologi Integrasi" onerror="this.src='assets/tentang.png'">
+        <div class="badge"><strong>10+</strong><span>Tahun Pengalaman</span></div>
+      </div>
+      <div class="reveal">
+        <h3>Menghadirkan Masa Depan Pengelolaan Gedung</h3>
+        <p>JP Teknologi Integrasi adalah perusahaan yang bergerak di bidang sistem monitoring, otomasi, solusi engineering, serta pengembangan software berbasis teknologi digital. Fokus utama kami adalah pengembangan smart building dan software/aplikasi pengelolaan gedung.</p>
+        <p>Dengan pengalaman lebih dari 10 tahun di bidang elektronika, pemrograman, dan sistem embedded, kami berkomitmen menghadirkan solusi inovatif, efisien, presisi, handal, dan mudah diintegrasikan untuk berbagai sektor industri, gedung, telekomunikasi, dan fasilitas publik.</p>
+        <div class="vm">
+          <div><h4>Visi</h4><p>Menjadi penyedia solusi teknologi gedung terdepan yang mengubah cara pengelolaan bangunan di Indonesia.</p></div>
+          <div><h4>Misi</h4><p>Menghadirkan solusi teknologi terintegrasi yang efisien, handal, dan mudah diakses untuk setiap kebutuhan.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="values">
+      <div class="value reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></svg></div><h4>Inovatif</h4><p>Terus menghadirkan solusi terdepan berbasis teknologi terkini</p></div>
+      <div class="value reveal"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div><h4>Presisi</h4><p>Setiap solusi dirancang dengan akurasi dan detail tinggi</p></div>
+      <div class="value reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></div><h4>Handal</h4><p>Sistem yang stabil, tahan lama, dan dapat diandalkan 24/7</p></div>
+      <div class="value reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M9 17H7A5 5 0 0 1 7 7h2M15 7h2a5 5 0 0 1 0 10h-2M8 12h8"/></svg></div><h4>Terintegrasi</h4><p>Mudah terhubung dengan sistem eksisting dan platform lainnya</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LAYANAN -->
+<section id="layanan" class="bg-white">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Layanan Kami</span>
+      <h2>Solusi Lengkap untuk Gedung Cerdas Anda</h2>
+      <p>Dari perencanaan hingga implementasi, kami menyediakan layanan end-to-end untuk kebutuhan smart building dan teknologi pengelolaan gedung.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M12 14h.01M16 10h.01M16 14h.01M8 10h.01M8 14h.01"/></svg></div><h3>Smart Building System</h3><p>Sistem cerdas untuk monitoring dan pengelolaan seluruh aspek bangunan secara terintegrasi — mulai dari utilitas, keamanan, hingga kenyamanan penghuni, semua dalam satu platform terpadu.</p><a href="#kontak" class="more">Pelajari lebih lanjut →</a></div>
+      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><h3>Sistem Monitoring Digital</h3><p>Pemantauan real-time untuk listrik, air, suhu, kelembapan, dan berbagai parameter gedung lainnya. Dashboard interaktif memungkinkan pengambilan keputusan yang cepat dan akurat.</p><a href="#kontak" class="more">Pelajari lebih lanjut →</a></div>
+      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></div><h3>Otomasi dan Sistem Kontrol</h3><p>Solusi otomasi yang mengoptimalkan operasional gedung secara otomatis — dari kontrol pencahayaan, HVAC, hingga manajemen energi untuk efisiensi maksimal.</p><a href="#kontak" class="more">Pelajari lebih lanjut →</a></div>
+      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.8-3.8a6 6 0 0 1-7.9 7.9l-6.9 6.9a2.1 2.1 0 0 1-3-3l6.9-6.9a6 6 0 0 1 7.9-7.9l-3.8 3.8z"/></svg></div><h3>Solusi Engineering</h3><p>Layanan engineering komprehensif meliputi desain, instalasi, dan integrasi sistem elektronika dan embedded system untuk kebutuhan industri dan bangunan modern.</p><a href="#kontak" class="more">Pelajari lebih lanjut →</a></div>
+      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></div><h3>Software Pengelolaan Gedung</h3><p>Pengembangan aplikasi custom berbasis web dan mobile untuk manajemen apartemen, billing, complaint handling, maintenance report, dan seluruh operasional gedung.</p><a href="#kontak" class="more">Pelajari lebih lanjut →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUSI -->
+<section id="solusi">
+  <div class="bgimg"><img src="https://media.base44.com/images/public/69d2253bc8e74360dbdd10ec/c97eb2958_generated_44c4205e.png" alt="" onerror="this.src='assets/solusi.png'"></div>
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Solusi &amp; Produk Unggulan</span>
+      <h2>Ekosistem Teknologi Gedung Terintegrasi</h2>
+      <p>Rangkaian produk dan solusi yang saling terhubung untuk menciptakan pengelolaan gedung yang efisien, transparan, dan modern.</p>
+    </div>
+    <div class="grid-5">
+      <div class="sol reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h4>Monitoring Listrik</h4><p>Pemantauan konsumsi energi real-time untuk optimasi biaya</p></div>
+      <div class="sol reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5S5 13 5 15a7 7 0 0 0 7 7z"/></svg></div><h4>Monitoring Air &amp; Utilitas</h4><p>Sistem pengukuran dan pelaporan penggunaan air otomatis</p></div>
+      <div class="sol reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M14 4v10.5a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0z"/></svg></div><h4>Monitoring Suhu &amp; Lingkungan</h4><p>Pengawasan kondisi lingkungan gedung secara presisi</p></div>
+      <div class="sol reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg></div><h4>Sistem Alarm Terpadu</h4><p>Notifikasi dan peringatan dini untuk keamanan dan safety</p></div>
+      <div class="sol reveal"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg></div><h4>Dashboard Real-time</h4><p>Visualisasi data operasional gedung dalam satu tampilan</p></div>
+      <div class="sol reveal"><div class="ico"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div><h4>Aplikasi Pengelolaan Gedung</h4><p>Mobile app untuk manajemen apartemen dan properti</p></div>
+      <div class="sol reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8M12 17.5v-11"/></svg></div><h4>Sistem Billing</h4><p>Otomasi tagihan utilitas dan biaya operasional</p></div>
+      <div class="sol reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h4>Complaint Handling</h4><p>Sistem penanganan keluhan penghuni yang terstruktur</p></div>
+      <div class="sol reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></svg></div><h4>Maintenance Report</h4><p>Pelaporan dan penjadwalan perawatan gedung otomatis</p></div>
+      <div class="sol reveal"><div class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><h4>Software Custom Web/Mobile</h4><p>Pengembangan aplikasi sesuai kebutuhan spesifik klien</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- KEUNGGULAN -->
+<section id="keunggulan" class="bg-soft">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Keunggulan Kami</span>
+      <h2>Mengapa Memilih JP Teknologi Integrasi?</h2>
+      <p>Komitmen kami pada kualitas, inovasi, dan kepuasan klien menjadi fondasi setiap solusi yang kami hadirkan.</p>
+    </div>
+    <div class="grid-3">
+      <div class="adv reveal"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"/></svg></div><div><h4>10+ Tahun Pengalaman</h4><p>Lebih dari satu dekade mengembangkan solusi teknologi untuk berbagai sektor industri dan properti.</p></div></div>
+      <div class="adv reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></div><div><h4>Tim Ahli Berpengalaman</h4><p>Didukung tenaga ahli di bidang elektronika, programming, embedded system, dan engineering.</p></div></div>
+      <div class="adv reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></div><div><h4>Solusi Custom</h4><p>Setiap proyek dirancang khusus sesuai kebutuhan dan kondisi spesifik klien.</p></div></div>
+      <div class="adv reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M22 7 13.5 15.5l-5-5L2 17"/><path d="M16 7h6v6"/></svg></div><div><h4>Presisi &amp; Scalable</h4><p>Sistem yang akurat, stabil, dan dapat berkembang seiring pertumbuhan kebutuhan.</p></div></div>
+      <div class="adv reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2v6M12 16v6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M2 12h6M16 12h6"/></svg></div><div><h4>Mudah Diintegrasikan</h4><p>Arsitektur terbuka yang memudahkan koneksi dengan sistem dan platform yang sudah ada.</p></div></div>
+      <div class="adv reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 13v8M4 14.9A7 7 0 1 1 15.7 8h1.8a4.5 4.5 0 0 1 2.5 8.2"/><path d="m8 17 4-4 4 4"/></svg></div><div><h4>Efisiensi Operasional</h4><p>Fokus pada peningkatan efisiensi dan value properti melalui teknologi.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SEKTOR -->
+<section id="sektor" class="bg-white">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Bidang Penerapan</span>
+      <h2>Solusi untuk Berbagai Sektor</h2>
+      <p>Teknologi kami diterapkan di berbagai sektor industri untuk menjawab kebutuhan pengelolaan yang beragam.</p>
+    </div>
+    <div class="sectors">
+      <div class="sector reveal"><div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4M8 6h.01M16 6h.01M12 6h.01M12 10h.01M8 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/></svg></div><h4>Apartemen &amp; Hunian Vertikal</h4><p>Solusi pengelolaan hunian modern berbasis teknologi</p></div>
+      <div class="sector reveal"><div class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div><h4>Gedung Perkantoran</h4><p>Efisiensi operasional dan kenyamanan ruang kerja</p></div>
+      <div class="sector reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9"/></svg></div><h4>Hotel &amp; Properti Komersial</h4><p>Peningkatan layanan dan pengalaman tamu</p></div>
+      <div class="sector reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/></svg></div><h4>Kawasan Industri</h4><p>Monitoring dan kontrol sistem produksi terintegrasi</p></div>
+      <div class="sector reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M4.9 16.1a10 10 0 0 1 0-8.2M7.8 13.6a5 5 0 0 1 0-3.2M16.2 10.4a5 5 0 0 1 0 3.2M19.1 7.9a10 10 0 0 1 0 8.2"/><circle cx="12" cy="12" r="2"/><path d="m13.4 20-1.4-6-1.4 6"/></svg></div><h4>Telekomunikasi</h4><p>Infrastruktur monitoring untuk tower dan jaringan</p></div>
+      <div class="sector reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 6v4M14 14h-4M14 18h-4M14 8h-4M18 12h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2h2"/><path d="M18 22V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v18"/></svg></div><h4>Rumah Sakit &amp; Fasilitas Publik</h4><p>Keamanan dan keandalan sistem critical facility</p></div>
+      <div class="sector reveal"><div class="ico"><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><h4>Sekolah &amp; Institusi</h4><p>Digitalisasi pengelolaan fasilitas pendidikan</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROSES -->
+<section id="proses" class="bg-soft">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Proses Kerja</span>
+      <h2>Metodologi Kerja Terstruktur</h2>
+      <p>Pendekatan sistematis kami memastikan setiap proyek berjalan tepat waktu, sesuai spesifikasi, dan memberikan hasil terbaik.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="num">01</div><h4>Identifikasi Kebutuhan</h4><p>Analisis mendalam terhadap kondisi, kebutuhan, dan target yang ingin dicapai klien.</p></div>
+      <div class="step reveal"><div class="num">02</div><h4>Perancangan Solusi</h4><p>Desain arsitektur sistem dan solusi yang optimal sesuai hasil identifikasi.</p></div>
+      <div class="step reveal"><div class="num">03</div><h4>Implementasi &amp; Integrasi</h4><p>Instalasi, konfigurasi, dan integrasi sistem dengan infrastruktur yang sudah ada.</p></div>
+      <div class="step reveal"><div class="num">04</div><h4>Pengujian &amp; Optimasi</h4><p>Testing menyeluruh untuk memastikan sistem bekerja sesuai standar dan spesifikasi.</p></div>
+      <div class="step reveal"><div class="num">05</div><h4>Maintenance &amp; Pengembangan</h4><p>Dukungan berkelanjutan, perawatan rutin, dan pengembangan fitur sesuai kebutuhan.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAK -->
+<section id="kontak" class="bg-white">
+  <div class="wrap">
+    <div class="head reveal">
+      <span class="eyebrow">Hubungi Kami</span>
+      <h2>Siap Memulai Proyek Anda?</h2>
+      <p>Konsultasikan kebutuhan teknologi gedung Anda dengan tim ahli kami. Kami siap membantu mewujudkan solusi terbaik.</p>
+    </div>
+    <div class="contact">
+      <div class="info reveal">
+        <div class="info-item"><div class="ico"><svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><h4>Alamat</h4><p>Kawasan Pergudangan Surya Grand Cisoka Blok A1 No.1, Jln. Raya Cisoka No.2, Bojongloa, Cisoka, Tangerang-Banten 15730</p></div></div>
+        <div class="info-item"><div class="ico"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div><div><h4>Telepon</h4><a href="tel:+6281370428057">+62 813-7042-8057</a></div></div>
+        <div class="info-item"><div class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div><div><h4>Email</h4><a href="mailto:info@jpteknologi.com">info@jpteknologi.com</a></div></div>
+        <div class="map">
+          <iframe src="https://www.google.com/maps?q=Kawasan+Pergudangan+Surya+Grand+Cisoka,+Tangerang&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokasi JP Teknologi Integrasi"></iframe>
+          <a href="https://www.google.com/maps/search/?api=1&query=Kawasan+Pergudangan+Surya+Grand+Cisoka+Tangerang" target="_blank" rel="noopener">Buka di Maps ↗</a>
+        </div>
+      </div>
+      <form id="form" class="reveal">
+        <h3>Kirim Pesan</h3>
+        <div class="row">
+          <div><label for="nama">Nama Lengkap</label><input id="nama" required></div>
+          <div><label for="email">Email</label><input id="email" type="email" required></div>
+        </div>
+        <div class="row">
+          <div><label for="telp">Nomor Telepon</label><input id="telp" type="tel"></div>
+          <div><label for="subjek">Subjek</label><input id="subjek" required></div>
+        </div>
+        <label for="pesan">Pesan</label>
+        <textarea id="pesan" required></textarea>
+        <button class="btn btn-primary" type="submit">Kirim Pesan <svg width="18" height="18" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg></button>
+        <p class="note" id="note">Terima kasih! Pesan Anda diteruskan ke WhatsApp kami.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="#beranda" class="logo"><span class="mark">JP</span><span><b>JP Teknologi</b><small>INTEGRASI</small></span></a>
+        <p class="desc">Menghadirkan solusi smart building, monitoring digital, otomasi, dan software pengelolaan gedung yang inovatif dan terintegrasi.</p>
+      </div>
+      <div>
+        <h5>Navigasi</h5>
+        <ul><li><a href="#beranda">Beranda</a></li><li><a href="#tentang">Tentang Kami</a></li><li><a href="#layanan">Layanan</a></li><li><a href="#solusi">Solusi</a></li><li><a href="#keunggulan">Keunggulan</a></li><li><a href="#kontak">Kontak</a></li></ul>
+      </div>
+      <div>
+        <h5>Layanan</h5>
+        <ul><li><a href="#layanan">Smart Building System</a></li><li><a href="#layanan">Sistem Monitoring Digital</a></li><li><a href="#layanan">Otomasi &amp; Sistem Kontrol</a></li><li><a href="#layanan">Solusi Engineering</a></li><li><a href="#layanan">Software Pengelolaan Gedung</a></li></ul>
+      </div>
+      <div>
+        <h5>Kontak</h5>
+        <ul><li>Kawasan Pergudangan Surya Grand Cisoka Blok A1 No.1, Tangerang-Banten 15730</li><li><a href="tel:+6281370428057">+62 813-7042-8057</a></li><li><a href="mailto:jpteknointegrasi@gmail.com">jpteknointegrasi@gmail.com</a></li></ul>
+      </div>
+    </div>
+    <div class="copy"><span>© <span id="yr">2026</span> JP Teknologi Integrasi. All rights reserved.</span><span>Smart Building &amp; Digital Solutions</span></div>
+  </div>
+</footer>
+
+<a class="wa" id="wa" target="_blank" rel="noopener" aria-label="Chat via WhatsApp" title="Chat via WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.2A11.8 11.8 0 0 0 1.7 17.8L0 24l6.3-1.7A11.8 11.8 0 0 0 23.8 12c0-3.2-1.2-6.1-3.4-8.4z"/></svg>
+</a>
+
+<script>
+const WA='6281370428057';
+const header=document.getElementById('top');
+const onScroll=()=>header.classList.toggle('scrolled',scrollY>40);
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+const menu=document.getElementById('menu');
+document.getElementById('burger').onclick=()=>{menu.classList.toggle('open');header.classList.add('scrolled')};
+menu.querySelectorAll('a').forEach(a=>a.onclick=()=>menu.classList.remove('open'));
+
+document.getElementById('wa').href='https://wa.me/'+WA+'?text='+encodeURIComponent('Halo, saya tertarik dengan layanan JP Teknologi Integrasi. Bisa konsultasi?');
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+document.getElementById('form').onsubmit=e=>{
+  e.preventDefault();
+  const v=id=>document.getElementById(id).value.trim();
+  const msg=`Halo JP Teknologi Integrasi,\n\nNama: ${v('nama')}\nEmail: ${v('email')}\nTelepon: ${v('telp')||'-'}\nSubjek: ${v('subjek')}\n\n${v('pesan')}`;
+  window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank');
+  document.getElementById('note').style.display='block';
+  e.target.reset();
+};
+</script>
+</body>
+</html>
