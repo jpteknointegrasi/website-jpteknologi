@@ -6,7 +6,8 @@ Halaman statis satu file (`index.html`) tanpa build step: HTML + CSS + JavaScrip
 
 ## Struktur
 - `index.html` — seluruh halaman (Beranda, Tentang, Layanan, Solusi, Keunggulan, Sektor, Proses, Kontak)
-- `assets/` — gambar lokal (opsional): `hero.png`, `tentang.png`, `solusi.png` dipakai sebagai cadangan bila gambar dari server Base44 gagal dimuat
+- `assets/` — gambar website (`hero.webp`, `tentang.webp`, `solusi.webp`, `og.jpg`), dibuat oleh workflow **Ambil & kompres gambar** (tab Actions)
+- `favicon.svg`, `robots.txt`, `sitemap.xml`, `404.html`, `CNAME`
 
 ## Menjalankan
 Buka `index.html` langsung di browser, atau sajikan dengan server statis apa pun (cPanel, Netlify, GitHub Pages).

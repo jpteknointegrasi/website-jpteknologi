@@ -1,0 +1,37 @@
+name: Ambil & kompres gambar
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/fetch-assets.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install tools
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq webp imagemagick
+      - name: Download & convert
+        run: |
+          set -e
+          B=https://media.base44.com/images/public/69d2253bc8e74360dbdd10ec
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"
+          mkdir -p assets tmp
+          dl() { curl -sSfL -A "$UA" -e "https://jp-integrasi-dbdd10ec.base44.app/" -o "tmp/$1.png" "$B/$2.png"; }
+          dl hero 1d3c947d6_generated_e668bd84
+          dl tentang e0c44c6be_generated_e6b75625
+          dl solusi c97eb2958_generated_44c4205e
+          for n in hero tentang solusi; do cwebp -quiet -q 72 -resize 1600 0 "tmp/$n.png" -o "assets/$n.webp"; done
+          convert tmp/hero.png -resize 1200x630^ -gravity center -extent 1200x630 -quality 82 assets/og.jpg
+          rm -rf tmp && ls -la assets
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add assets
+          git diff --cached --quiet || (git commit -m "Simpan gambar website secara lokal (webp + og.jpg)" && git push)
