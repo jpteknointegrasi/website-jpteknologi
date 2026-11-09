@@ -180,6 +180,14 @@ header.scrolled .burger{color:var(--navy)}
 .proj p{color:rgba(255,255,255,.7);font-size:15px;margin-bottom:14px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chips span{font-size:12px;font-weight:600;color:#7fe0e0;background:var(--teal-20);padding:5px 12px;border-radius:999px}
+.pf-title{color:#fff;font-size:20px;margin:56px 0 20px}
+.portfolio{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.pf{border-radius:16px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.04);padding:22px;transition:.25s}
+.pf:hover{border-color:rgba(31,173,173,.5);transform:translateY(-3px)}
+.pf .ic{width:44px;height:44px;border-radius:12px;background:var(--teal-20);color:#7fe0e0;display:grid;place-items:center;margin-bottom:14px}
+.pf .ic svg{width:22px;height:22px}
+.pf h4{color:#fff;font-size:17px;margin-bottom:6px}
+.pf small{display:block;color:rgba(255,255,255,.6);font-size:14px;margin-bottom:12px}
 
 /* ADVANTAGES */
 .adv{display:flex;gap:18px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:.25s}
@@ -246,6 +254,7 @@ footer .desc{font-size:14px;margin-top:16px}
 @media (max-width:860px){
   section{padding:72px 0}
   .vt-intro,.projects{grid-template-columns:1fr}
+  .portfolio{grid-template-columns:1fr 1fr}
   .products{grid-template-columns:1fr 1fr}
   .menu{position:fixed;top:72px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fff;padding:12px 20px 20px;box-shadow:var(--shadow);display:none}
   .menu.open{display:flex}
@@ -258,6 +267,7 @@ footer .desc{font-size:14px;margin-top:16px}
   .grid-3{grid-template-columns:1fr 1fr}
 }
 @media (max-width:600px){
+  .portfolio{grid-template-columns:1fr}
   .grid-3,.grid-5,.vm,.row,.foot{grid-template-columns:1fr}
   .grid-5{grid-template-columns:1fr 1fr}
   .steps{grid-template-columns:1fr}
@@ -430,7 +440,7 @@ footer .desc{font-size:14px;margin-top:16px}
     <div class="head reveal">
       <span class="eyebrow">Pengalaman Pekerjaan</span>
       <h2>Dipercaya untuk Fasilitas Publik Strategis</h2>
-      <p>Beberapa proyek yang telah kami kerjakan di sektor bandara dan transportasi.</p>
+      <p>Beberapa proyek yang telah kami kerjakan di sektor bandara, pemerintahan, dan fasilitas publik.</p>
     </div>
     <div class="projects">
       <div class="proj reveal">
@@ -441,6 +451,18 @@ footer .desc{font-size:14px;margin-top:16px}
         <div class="top"><svg viewBox="0 0 24 24"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg><div class="loc"><small>Tapanuli Utara · Sumatera Utara</small><h3>Bandara Silangit</h3></div></div>
         <div class="body"><p>Pekerjaan videotron dan CCTV untuk mendukung penyampaian informasi serta keamanan di area terminal bandara.</p><div class="chips"><span>Videotron</span><span>CCTV</span><span>Bandara</span></div></div>
       </div>
+    </div>
+    <h3 class="pf-title reveal">Portofolio Proyek Lainnya</h3>
+    <div class="portfolio">
+      <div class="pf reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M14 4v10.5a4 4 0 1 1-4 0V4a2 2 0 1 1 4 0z"/></svg></div><h4>Environment System</h4><small>Bandara SIM Aceh &amp; KNO Medan</small><div class="chips"><span>Monitoring</span><span>Bandara</span></div></div>
+      <div class="pf reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><h4>Power Monitoring Ruang Server</h4><small>Bandara SIM Aceh &amp; KNO Medan</small><div class="chips"><span>Energi</span><span>Monitoring</span></div></div>
+      <div class="pf reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V16h8v-1.3A7 7 0 0 0 12 2z"/></svg></div><h4>AFL – Airfield Lighting System</h4><small>Bandara SIM Aceh</small><div class="chips"><span>OPC</span><span>HMI</span></div></div>
+      <div class="pf reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10.3 21a1.9 1.9 0 0 0 3.4 0"/></svg></div><h4>Crash Bell System</h4><small>Bandara KNO Medan</small><div class="chips"><span>Bandara</span><span>Sistem Alarm</span></div></div>
+      <div class="pf reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-4-3-6-4-10-2 2-3 4-3 6-1-1-2-2-2-4-2 2-5 5-5 8a7 7 0 0 0 7 7z"/></svg></div><h4>Sistem Reset Integrasi Fire Alarm</h4><small>Bandara KNO Medan</small><div class="chips"><span>Fire Alarm</span><span>Integrasi</span></div></div>
+      <div class="pf reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2.7 6.3 8.3a8 8 0 1 0 11.4 0z"/></svg></div><h4>Animasi Lampu &amp; Air Mancur Skala Besar</h4><small>Banda Aceh &amp; Medan</small><div class="chips"><span>Kontrol</span><span>Embedded</span></div></div>
+      <div class="pf reveal"><div class="ic"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h4M6 14h8M14 10h4"/></svg></div><h4>Running Text RGB Online</h4><small>Pemerintah Kota Medan</small><div class="chips"><span>Display</span><span>IoT</span></div></div>
+      <div class="pf reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 12.6a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 20h.01M2 8.8a15 15 0 0 1 20 0"/></svg></div><h4>Wireless Nurse Call</h4><small>RS Haji Medan &amp; RS Amry Tambunan</small><div class="chips"><span>Rumah Sakit</span><span>Wireless</span></div></div>
+      <div class="pf reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v18M5 7h14M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0zM8 21h8"/></svg></div><h4>Timbangan Digital Terkoneksi Android</h4><small>Integrasi perangkat</small><div class="chips"><span>Android</span><span>Embedded</span></div></div>
     </div>
   </div>
 </section>
